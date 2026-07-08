@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Rutu! 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #FFF7F0;
+    --blush: #FFC4D6;
+    --lavender: #C9A9E9;
+    --butter: #FFE28A;
+    --mint: #8BE0C9;
+    --plum: #4A3B52;
+    --plum-soft: #7A6584;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin:0;
+    padding:0;
+    background: var(--cream);
+    color: var(--plum);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x:hidden;
+    min-height:100%;
+  }
+
+  /* ambient floating balloons in background */
+  .balloon{
+    position: fixed;
+    bottom: -140px;
+    width: 60px;
+    height: 76px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.55;
+    z-index: 0;
+    animation: floatUp linear infinite;
+  }
+  .balloon::after{
+    content:'';
+    position:absolute;
+    bottom:-38px;
+    left:50%;
+    width:2px;
+    height:38px;
+    background: rgba(74,59,82,0.25);
+  }
+  @keyframes floatUp{
+    0%{ transform: translateY(0) translateX(0) rotate(-4deg); }
+    50%{ transform: translateY(-55vh) translateX(30px) rotate(4deg); }
+    100%{ transform: translateY(-115vh) translateX(-20px) rotate(-4deg); }
+  }
+
+  .page{
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    text-align: center;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--plum-soft);
+    background: #ffffffaa;
+    border: 1.5px dashed var(--lavender);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  h1{
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 9vw, 4.2rem);
+    line-height: 1.05;
+    margin: 0 0 8px;
+    color: var(--plum);
+    text-shadow: 3px 3px 0 var(--butter);
+  }
+
+  h1 .name{
+    color: #E85A8A;
+    text-shadow: 3px 3px 0 var(--lavender);
+  }
+
+  .subtitle{
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--plum-soft);
+    margin: 0 0 36px;
+  }
+
+  /* CAKE — the signature element */
+  .cake-wrap{
+    position: relative;
+    width: 220px;
+    height: 210px;
+    margin: 0 auto 32px;
+  }
+  .plate{
+    position:absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ffffff, #f1e6ee);
+    box-shadow: 0 6px 14px rgba(74,59,82,0.18);
+  }
+  .tier{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 14px;
+    box-shadow: inset 0 -8px 0 rgba(0,0,0,0.06);
+  }
+  .tier.bottom{
+    bottom: 20px;
+    width: 170px;
+    height: 62px;
+    background: var(--blush);
+  }
+  .tier.top{
+    bottom: 78px;
+    width: 120px;
+    height: 52px;
+    background: var(--lavender);
+  }
+  .icing{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    height: 14px;
+    border-radius: 40% 40% 0 0 / 100% 100% 0 0;
+    background: #fff;
+  }
+  .icing.bottom{ bottom: 78px; width: 178px; }
+  .icing.top{ bottom: 126px; width: 128px; }
+  .sprinkle{
+    position:absolute;
+    width:6px; height:6px;
+    border-radius: 2px;
+  }
+  .candle{
+    position:absolute;
+    bottom: 130px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 34px;
+    background: repeating-linear-gradient(180deg, #FFD166, #FFD166 6px, #fff 6px, #fff 12px);
+    border-radius: 3px;
+  }
+  .flame{
+    position:absolute;
+    bottom: 162px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 18px;
+    background: radial-gradient(circle at 50% 70%, #FFF3B0 0%, #FFB13C 55%, #FF7A3C 100%);
+    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+    animation: flicker 1.4s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(255,180,60,0.8));
+  }
+  @keyframes flicker{
+    0%, 100%{ transform: translateX(-50%) scale(1) rotate(-2deg); }
+    50%{ transform: translateX(-50%) scale(1.12) rotate(3deg); }
+  }
+
+  .message-card{
+    background: #ffffffcc;
+    border: 2px solid #fff;
+    border-radius: 24px;
+    padding: 26px 26px 22px;
+    box-shadow: 0 12px 30px rgba(74,59,82,0.12);
+    margin-bottom: 34px;
+  }
+  .message-card p{
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--plum);
+  }
+  .message-card p:last-child{ margin-bottom: 0; }
+  .signoff{
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    color: #E85A8A;
+  }
+
+  /* Music player card */
+  .music-card{
+    background: linear-gradient(135deg, #fff, #fdf3f8);
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 34px;
+    box-shadow: 0 12px 30px rgba(74,59,82,0.12);
+  }
+  .music-label{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--plum-soft);
+    margin-bottom: 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 8px;
+  }
+  .music-card iframe{
+    border-radius: 14px;
+  }
+
+  /* Confetti button — the other hero moment */
+  .party-btn{
+    position: relative;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #fff;
+    background: linear-gradient(135deg, #FF8FB1, #C9A9E9);
+    border: none;
+    padding: 18px 38px;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(232,90,138,0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    letter-spacing: 0.02em;
+  }
+  .party-btn:hover{
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 14px 30px rgba(232,90,138,0.45);
+  }
+  .party-btn:active{
+    transform: translateY(0) scale(0.98);
+  }
+
+  .footer-note{
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: var(--plum-soft);
+    opacity: 0.8;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .balloon, .flame{ animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="confettiCanvas" style="position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:999;"></canvas>
+
+<!-- ambient balloons -->
+<div class="balloon" style="left:6%; background: var(--blush); animation-duration: 16s; animation-delay: 0s;"></div>
+<div class="balloon" style="left:20%; background: var(--mint); animation-duration: 21s; animation-delay: 3s;"></div>
+<div class="balloon" style="left:78%; background: var(--butter); animation-duration: 18s; animation-delay: 1s;"></div>
+<div class="balloon" style="left:88%; background: var(--lavender); animation-duration: 24s; animation-delay: 5s;"></div>
+<div class="balloon" style="left:45%; background: var(--blush); animation-duration: 20s; animation-delay: 7s;"></div>
+
+<div class="page">
+  <span class="eyebrow">A little something for you</span>
+  <h1>Happy Birthday,<br><span class="name">Rutu!</span> 🎉</h1>
+  <p class="subtitle">Today the whole world celebrates you (okay, mostly this website, but still)</p>
+
+  <div class="cake-wrap" aria-hidden="true">
+    <div class="tier bottom"></div>
+    <div class="tier top"></div>
+    <div class="icing bottom"></div>
+    <div class="icing top"></div>
+    <div class="candle"></div>
+    <div class="flame"></div>
+    <div class="plate"></div>
+  </div>
+
+  <div class="message-card">
+    <p>Wishing you a birthday as sweet, warm, and wonderful as you are. Hope your day is filled with laughter, good food, and everyone treating you like the main character (because you are).</p>
+    <p>Here's to another year of good vibes and bigger adventures.</p>
+    <p class="signoff">— with love, your friend 💌</p>
+  </div>
+
+  <div class="music-card">
+    <div class="music-label">🎵 your birthday anthem</div>
+    <iframe style="border-radius:14px" src="https://open.spotify.com/embed/track/2GBgiuXwY1KzJMA0gSAr9J?utm_source=generator&theme=0"
+      width="100%" height="152" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
+
+  <button class="party-btn" id="confettiBtn">✨ Press for confetti ✨</button>
+
+  <p class="footer-note">made with love (and a little too much css) for Rutu's birthday</p>
+</div>
+
+<script>
+  // ---- Self-contained confetti engine (no external libraries needed) ----
+  const canvas = document.getElementById('confettiCanvas');
+  const ctx = canvas.getContext('2d');
+  const colors = ['#FF8FB1', '#C9A9E9', '#FFE28A', '#8BE0C9', '#ffffff'];
+  let particles = [];
+  let animating = false;
+
+  function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  function makeParticle(opts){
+    const angleRad = (opts.angle * Math.PI) / 180;
+    const spreadRad = (opts.spread * Math.PI) / 180;
+    const dir = angleRad + (Math.random() - 0.5) * spreadRad;
+    const speed = opts.startVelocity * (0.5 + Math.random() * 0.5);
+    return {
+      x: opts.x,
+      y: opts.y,
+      vx: Math.cos(dir) * speed,
+      vy: -Math.sin(dir) * speed,
+      gravity: opts.gravity,
+      size: (4 + Math.random() * 5) * (opts.scalar || 1),
+      color: opts.colors[Math.floor(Math.random() * opts.colors.length)],
+      rotation: Math.random() * 360,
+      rotationSpeed: (Math.random() - 0.5) * 12,
+      shape: opts.shape || 'rect',
+      life: 1,
+      decay: 0.006 + Math.random() * 0.006
+    };
+  }
+
+  function spawnBurst(opts){
+    const defaults = {
+      x: canvas.width / 2,
+      y: canvas.height * 0.65,
+      angle: 90,
+      spread: 90,
+      startVelocity: 28,
+      gravity: 0.55,
+      particleCount: 60,
+      colors: colors,
+      shape: 'rect',
+      scalar: 1
+    };
+    const o = Object.assign({}, defaults, opts);
+    for (let i = 0; i < o.particleCount; i++){
+      particles.push(makeParticle(o));
+    }
+    if (!animating){
+      animating = true;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  function drawStar(p){
+    ctx.beginPath();
+    const spikes = 5;
+    const outerR = p.size;
+    const innerR = p.size / 2.2;
+    for (let i = 0; i < spikes * 2; i++){
+      const r = i % 2 === 0 ? outerR : innerR;
+      const a = (Math.PI / spikes) * i;
+      const px = Math.cos(a) * r;
+      const py = Math.sin(a) * r;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function tick(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += p.gravity;
+      p.vx *= 0.99;
+      p.rotation += p.rotationSpeed;
+      p.life -= p.decay;
+
+      ctx.save();
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.translate(p.x, p.y);
+      ctx.rotate((p.rotation * Math.PI) / 180);
+      ctx.fillStyle = p.color;
+
+      if (p.shape === 'star'){
+        drawStar(p);
+      } else {
+        ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+      }
+      ctx.restore();
+    });
+
+    particles = particles.filter(p => p.life > 0 && p.y < canvas.height + 50);
+
+    if (particles.length > 0){
+      requestAnimationFrame(tick);
+    } else {
+      animating = false;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  function burst(){
+    // big center burst
+    spawnBurst({
+      x: canvas.width / 2,
+      y: canvas.height * 0.65,
+      angle: 90,
+      spread: 100,
+      startVelocity: 26,
+      gravity: 0.5,
+      particleCount: 90,
+      colors: colors
+    });
+    // left cannon
+    spawnBurst({
+      x: 0,
+      y: canvas.height * 0.75,
+      angle: 60,
+      spread: 55,
+      startVelocity: 30,
+      gravity: 0.5,
+      particleCount: 45,
+      colors: colors
+    });
+    // right cannon
+    spawnBurst({
+      x: canvas.width,
+      y: canvas.height * 0.75,
+      angle: 120,
+      spread: 55,
+      startVelocity: 30,
+      gravity: 0.5,
+      particleCount: 45,
+      colors: colors
+    });
+    // sparkle stars falling from top
+    spawnBurst({
+      x: canvas.width / 2,
+      y: -20,
+      angle: 270,
+      spread: 160,
+      startVelocity: 6,
+      gravity: 0.25,
+      particleCount: 35,
+      shape: 'star',
+      scalar: 0.9,
+      colors: ['#FFE28A', '#ffffff', '#FFC4D6']
+    });
+  }
+
+  const btn = document.getElementById('confettiBtn');
+  btn.addEventListener('click', burst);
+
+  // little welcome burst on load
+  window.addEventListener('load', () => {
+    setTimeout(burst, 500);
+  });
+</script>
+
+</body>
+</html>
